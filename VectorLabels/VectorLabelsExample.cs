@@ -8,6 +8,9 @@ public class VectorLabelsExample : MonoBehaviour
     [VectorLabels("Width", "Height", "Depth")]
     public Vector3 vec3;
 
-    [VectorLabels("Tiling X", "Tiling Y")]
+    [VectorLabels("@GetXValue()", "@GetYValue()")]
     public Vector2 vec2;
+
+    private static string GetXValue() => "Resolved X";
+    private static string GetYValue() => "Resolved Y";
 }
