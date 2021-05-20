@@ -5,7 +5,7 @@
 ### Examples
 Examples can be found in the downloaded files.
 
-![](Example.gif)
+![](Example.png)
 
 ### Usage
 Simply put the downloaded VectorLabels folder in your project
