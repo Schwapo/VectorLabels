@@ -5,5 +5,7 @@ using Sirenix.OdinInspector.Editor;
 public class VectorLabelsAttributeStateUpdater : AttributeStateUpdater<VectorLabelsAttribute>
 {
     protected override void Initialize()
-        => Property.Tree.OnPropertyValueChanged += (prop, idx) => Property.RefreshSetup();
+    {
+        Property.Tree.OnPropertyValueChanged += (property, selectionIndex) => Property.RefreshSetup();
+    }
 }
