@@ -19,8 +19,10 @@ public class VectorLabelsExample : MonoBehaviour
     [VectorLabels("$GetXValue", "$GetYValue")]
     public Vector2 vec2;
 
-    private static string GetXValue() => "Resolved X";
-    private static string GetYValue() => "Resolved Y";
+    public bool niceName;
+
+    private string GetXValue() => niceName ? "Resolved X" : "ResolvedX";
+    private string GetYValue() => niceName ? "Resolved Y" : "ResolvedY";
 }
 ```
 
