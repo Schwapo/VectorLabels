@@ -16,9 +16,7 @@ public class VectorLabelsAttributeStateUpdater : AttributeStateUpdater<VectorLab
 
         foreach (var child in Property.Children)
         {
-            previousLabels[child.Name] = ValueResolver
-                .GetForString(Property, vectorLabelsAttribute.Labels[child.Name])
-                .GetValue();
+            previousLabels[child.Name] = GetResolvedVectorLabel(Property, child.Name);
         }
     }
 
@@ -26,9 +24,7 @@ public class VectorLabelsAttributeStateUpdater : AttributeStateUpdater<VectorLab
     {
         foreach (var child in Property.Children)
         {
-            var label = ValueResolver
-                .GetForString(Property, vectorLabelsAttribute.Labels[child.Name])
-                .GetValue();
+            var label = GetResolvedVectorLabel(Property, child.Name);
 
             if (label != previousLabels[child.Name])
             {
@@ -37,4 +33,7 @@ public class VectorLabelsAttributeStateUpdater : AttributeStateUpdater<VectorLab
             }
         }
     }
+
+    private string GetResolvedVectorLabel(InspectorProperty property, string label)
+        => ValueResolver.GetForString(property, vectorLabelsAttribute.Labels[label]).GetValue();
 }
