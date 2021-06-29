@@ -16,7 +16,7 @@ public class VectorLabelsExample : MonoBehaviour
     [VectorLabels("Width", "Height", "Depth")]
     public Vector3 vec3;
 
-    [VectorLabels("@GetXValue()", "@GetYValue()")]
+    [VectorLabels("$GetXValue", "$GetYValue")]
     public Vector2 vec2;
 
     private static string GetXValue() => "Resolved X";
