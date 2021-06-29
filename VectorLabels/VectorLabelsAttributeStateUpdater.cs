@@ -29,7 +29,7 @@ public class VectorLabelsAttributeStateUpdater : AttributeStateUpdater<VectorLab
             if (label != previousLabels[child.Name])
             {
                 previousLabels[child.Name] = label;
-                Property.RefreshSetup();
+                child.RefreshSetup();
             }
         }
     }
