@@ -21,7 +21,7 @@ public class VectorLabelsAttributeProcessor : OdinAttributeProcessor
     {
         var label = vectorLabelsAttribute.Labels[property.Name];
         var resolvedLabel = ValueResolver.GetForString(property.Parent, label).GetValue();
-        var labelWidth = EditorStyles.label.CalcSize(new GUIContent(resolvedLabel)).x;
+        var labelWidth = EditorStyles.label.CalcSize(new GUIContent(resolvedLabel)).x + 3f;
 
         attributes.Add(new LabelTextAttribute(resolvedLabel));
         attributes.Add(new LabelWidthAttribute(labelWidth));
