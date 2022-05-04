@@ -1,3 +1,4 @@
+#if UNITY_EDITOR
 using Sirenix.OdinInspector.Editor;
 using Sirenix.OdinInspector.Editor.ValueResolvers;
 using System.Collections.Generic;
@@ -37,3 +38,4 @@ public class VectorLabelsAttributeStateUpdater : AttributeStateUpdater<VectorLab
     private string GetResolvedVectorLabel(InspectorProperty property, string label)
         => ValueResolver.GetForString(property, vectorLabelsAttribute.Labels[label]).GetValue();
 }
+#endif
